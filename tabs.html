@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The History of Levi's Jeans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheet.css">
+  <!-- Add link to styles.css -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="tab-styles">
+  <div id="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="jeansHome.html">Home</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="famousfaces.html">Icons</a></li>
+          <li><a href="tabs.html">Tabs</a></li>
+          <li><a href="value.html">Value</a></li>
+          <li><a href="survey.html">Survey</a></li>
+        </ul>
+      </nav>
+      <h1>What is the meaning behind the tab? The tab is a symbol of Levi's that the consumer is able to recognize at first site.</h1>
+      <img src="images/allthetabs.JPG" alt="All the tabs" class="header-image">
+    </header>
+
+    <div class="image-container">
+      <div class="style">
+        <img src="images/bigEtab.jpg" alt="Big E tab" class="image" onmouseover="changeToColor(this)" onmouseout="changeToBW(this)">
+        <p>The Big 'E': Marks jeans that are pre-1971.</p>
+      </div>
+
+      <div class="style">
+        <img src="images/smallEtab.jpg" alt="Small E tab" class="image" onmouseover="changeToColor(this)" onmouseout="changeToBW(this)">
+        <p>The Small 'E': Marks jeans that are post-1971. Changed from the big 'E' for easier identification.</p>
+      </div>
+
+      <div class="style">
+        <img src="images/silvertab.jpg" alt="Silver tab" class="image" onmouseover="changeToColor(this)" onmouseout="changeToBW(this)">
+        <p>The Silver Tab: Represents the grunge era and was around in the 80s and 90s.</p>
+      </div>
+
+      <div class="style">
+        <img src="images/orangetab.jpg" alt="Orange tab" class="image" onmouseover="changeToColor(this)" onmouseout="changeToBW(this)">
+        <p>The Orange Tab: Around during the 60s and 70s, is the most sought after tab color today.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>All content copyright &copy; 2024, Sydney Willford.</p>
+      <div id="award"></div>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+    function changeToColor(img) {
+      img.style.filter = 'grayscale(0%)';
+    }
+
+    function changeToBW(img) {
+      img.style.filter = 'grayscale(100%)';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* Lana Del Rey Mood - Levi's Redesign */
+:root {
+  /* Color Palette */
+  --vintage-blue: #1a2e40;
+  --rust-red: #9c4a3c;
+  --cream: #f0e6d2;
+  --dark-denim: #0f1a26;
+  --gold: #c2a878;
+  --soft-white: #f8f5f0;
+  
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+  
+  /* Effects */
+  --grain-texture: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 800 800"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--cream);
+  background-color: var(--dark-denim);
+  line-height: 1.6;
+  background-image: var(--grain-texture);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(15, 26, 38, 0.7), rgba(15, 26, 38, 0.9));
+  z-index: -1;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+/* Header & Navigation */
+header {
+  position: relative;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(194, 168, 120, 0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0.5rem 0;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Header Text Styling */
+header h1 {
+  font-size: 2rem; /* Reduced font size */
+  color: #f0e6d2; /* Lighter color for better readability */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.tagline {
+  font-family: var(--font-accent);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(194, 168, 120, 0.1);
+}
+
+/* Cards */
+.card {
+  background: rgba(26, 46, 64, 0.5);
+  border: 1px solid rgba(194, 168, 120, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.card:hover {
+  border-color: rgba(194, 168, 120, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background: rgba(194, 168, 120, 0.1);
+  letter-spacing: 2px;
+}
+
+/* Timeline Section */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: var(--gold);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timeline-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  filter: grayscale(30%) contrast(110%);
+  border-radius: 0.5rem;
+}
+
+.timeline-text {
+  flex: 1;
+}
+
+/* Timeline Item Hover Effects */
+.timeline-item:hover {
+  background-color: rgba(15, 26, 38, 0.1);
+  transform: translateX(5px);
+}
+
+.timeline-item:hover .timeline-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Placeholder Images */
+.timeline-img-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #f0e6d2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--dark-denim);
+  border-radius: 0.5rem;
+}
+
+/* More Timeline Items */
+.timeline-item-extended {
+  margin-bottom: 4rem;
+}
+
+.timeline-item-extended .timeline-img {
+  max-height: 400px;
+}
+
+/* Layout Adjustments for Larger Timeline */
+@media (min-width: 768px) {
+  .timeline-item-extended {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-item-extended .timeline-img {
+    max-width: 80%;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .timeline::before {
+    left: 1rem;
+  }
+  
+  .timeline-item {
+    padding-left: 2rem;
+  }
+}
+
+.value-hero img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  width: 300px; /* or whatever looks best */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-start; /* Make sure the items are aligned properly */
+}
+
+.timeline-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modify the .timeline-img for Event 3 & 4 to be larger */
+.timeline-item .timeline-img img.large-image {
+  width: 100%;
+  max-width: 600px; /* Increase the max-width for larger images */
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fix the layout for the images to avoid them floating off */
+@media (min-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline-item img.large-image {
+    max-width: 80%; /* Ensure the images don't get too wide */
+  }
+}
